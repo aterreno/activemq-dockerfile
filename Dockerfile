@@ -4,9 +4,9 @@ RUN rm /etc/apt/sources.list
 RUN echo deb http://archive.ubuntu.com/ubuntu precise main universe multiverse > /etc/apt/sources.list
 
 RUN apt-get update
-RUN apt-get install openjdk-7-jre-headless curl -y
+RUN apt-get install tzdata=2012b-1 openjdk-7-jre-headless curl -y --force-yes
 
-RUN curl http://mirror.ox.ac.uk/sites/rsync.apache.org/activemq/apache-activemq/5.9.0/apache-activemq-5.9.0-bin.tar.gz > apache-activemq-5.9.0-bin.tar.gz
+RUN curl http://archive.apache.org/dist/activemq/apache-activemq/5.9.0/apache-activemq-5.9.0-bin.tar.gz > apache-activemq-5.9.0-bin.tar.gz
 RUN tar xzf apache-activemq-5.9.0-bin.tar.gz
 
 EXPOSE 61613 61616 8161
