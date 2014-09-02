@@ -6,8 +6,7 @@ RUN echo deb http://archive.ubuntu.com/ubuntu trusty main universe multiverse > 
 RUN apt-get update
 RUN apt-get install openjdk-7-jre-headless curl -y
 
-RUN curl http://archive.apache.org/dist/activemq/apache-activemq/5.9.0/apache-activemq-5.9.0-bin.tar.gz > apache-activemq-5.9.0-bin.tar.gz
-RUN tar xzf apache-activemq-5.9.0-bin.tar.gz
+RUN curl http://archive.apache.org/dist/activemq/apache-activemq/5.9.0/apache-activemq-5.9.0-bin.tar.gz | tar -xz
 
 EXPOSE 61612 61613 61616 8161
 
